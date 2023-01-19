@@ -1,0 +1,134 @@
+:root {
+    --clr-primary-400: hsl(215, 51%, 70%);
+    --clr-primary-200: hsl(178, 100%, 50%);
+
+    --clr-neutral-900: hsl(217, 54%, 11%);
+    --clr-neutral-600: hsl(216, 50%, 16%);
+    --clr-neutral-400: hsl(215, 32%, 27%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+}
+
+.flex {
+    display: flex;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: 1.125rem;
+    background-color: var(--clr-neutral-900);
+    color: var(--clr-primary-400);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main {
+    width: 375px;
+}
+
+.container {
+    background-color: var(--clr-neutral-600);
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+    position: relative;
+}
+
+.coin__profile {
+    position: relative;
+}
+
+
+.coin__profile-image {
+    position: relative;;
+    border-radius: 10px;
+}
+
+.coin__profile:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+
+    display: block;
+    background-color: var(--clr-primary-200);
+    cursor: pointer;
+    border-radius: 10px;
+    opacity: 0.5;
+
+    z-index: 1;
+}
+
+
+.coin__profile-overlay__eye {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.coin__profile:hover .coin__profile-overlay__eye {
+    display: block;
+}
+
+.coin__name {
+    font-size: 1.5rem;
+    color: var(--clr-neutral-100);
+}
+
+.coin__name:hover, .creator__name:hover {
+    cursor: pointer;
+    color: var(--clr-primary-200);
+}
+
+.coin {
+    justify-content: space-between;
+}
+
+.coin__price, .coin__time {
+    flex: 1;
+}
+
+.coin__icon, .coin__time-left {
+    padding-right: 0.4rem;
+}
+
+.coin__time {
+    justify-content: flex-end;
+}
+
+.coin__price > p {      /*Target the direct child*/
+    color: var(--clr-primary-200);
+    font-weight: 600;
+}
+
+.creator__profile {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    border: 1.5px solid var(--clr-neutral-100);
+    border-radius: 20px;
+}
+
+.creator__text {
+    margin: auto 0;
+
+}
+
+.creator__name {
+    color: var(--clr-neutral-100)
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
